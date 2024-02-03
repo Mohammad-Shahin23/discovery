@@ -1,0 +1,74 @@
+/* Add your CSS styles here */
+/* .body {
+  padding-top: 100px; 
+  padding-left: 50px;      
+  align-items: left;
+  justify-content: last baseline;
+  height: 100vh;
+  margin: 0;
+} */
+
+.leafletCard {
+  
+  width: 450px;
+  height: 600px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  color: #000;
+  margin: 100px 0  0 50px;
+}
+
+.card-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.text-list {
+  font-size: 24px;
+  list-style-type: none;
+  padding: 0;
+  color: #fff;  
+  font-family: 'Myriad Pro';
+}
+
+.text-list li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.text-list li::before {
+  content: "";
+}
+
+.text-list li:hover .hover-container {
+  display: block;
+}
+
+#emptyCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.myButton {
+  margin-bottom: 10px;
+  box-shadow: rgb(232, 171, 18) 1px 3px 0px -1px;
+  background-color: rgb(237, 107, 0);
+  border-radius: 20px;
+  border: 1px solid rgb(237, 107, 0);
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-family: Arial;
+  font-size: 20px;
+  padding: 8px 32px;
+  text-decoration: none;
+  text-shadow: rgb(119, 135, 168) -1px 0px 4px;
+  width: 100%;
+  height: 39px;
+}

@@ -1,0 +1,106 @@
+
+
+.swiper-container {
+    flex: 1;
+    height: 100%;
+    max-width: 800px;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+    margin-bottom: 50px; /* Add margin to make space for the arrows */
+    }
+    
+    .swiper-slide {
+    
+    width: 150px; /* Adjust width as needed */
+    height: 100%; /* Adjust height as needed */
+    position: relative;
+    
+    }
+    
+    @media (max-width: 500px) {
+    .swiper-slide {
+      width: 28rem !important;
+      height: 36rem !important;
+    }
+    
+    .swiper-slide img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
+    }
+    }
+    
+    .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: solid 5px #8a8686;
+    border-radius: 0;
+    transition: transform 0.5s ease-in-out;
+    }
+    
+    .swiper-slide:hover img {
+    transform: scale(1.03);
+    }
+    
+    .swiper-slide-shadow-left,
+    .swiper-slide-shadow-right {
+    display: none;
+    }
+    
+    .slider-controler {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      margin-top: 15px;
+    }
+    
+    .slider-controler .swiper-button-next,
+    .slider-controler .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+    
+    border-radius: 50%;
+    color: #000; /* Adjust arrow color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    }
+    
+    .slider-controler .swiper-button-next {
+    right: 15rem; /* Adjust as needed */
+    }
+    
+    .slider-controler .swiper-button-prev {
+    left: 15rem; /* Adjust as needed */
+    }
+    
+    .slider-title {
+    font-size: 30px; /* Adjust font size as needed */
+    color: #fff; /* Adjust color as needed */
+    }
+    
+    
+    .slider-controler .slider-arrow::after {
+      content: '';
+    }
+    
+    .slider-controler .slider-arrow {
+      font-size: 3rem;
+      color: #222224;
+      
+      
+    }
+    
+    .slider-controler .slider-arrow i {
+      border: solid #ffffff;
+      border-radius: 50%;
+      background-color: rgb(0, 132, 255);
+    }
+
+
