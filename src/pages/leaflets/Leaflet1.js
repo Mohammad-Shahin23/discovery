@@ -1,70 +1,19 @@
-import React from 'react';
-import '../../styles/leaflet/Leaflet1.css';
+import React from 'react'
+import LeafletCard from '../../components/LeafletCard'
+import PinchZoomComponent from '../../components/PinchZoomComponent'
 
+import '../../styles/leaflet/Leaflet1.css'
 
-function Leaflet_1() {
-  const navigateToPage = (url) => {
-    window.location.href = url;
-  };
-
+function Leaflet1() {
   return (
-    <div className="leafletCard" id="emptyCard">
-      <div className="card-title"></div>
-      <img
-        src="https://abwebdev.azurewebsites.net/portal/Uploads/Images/2019/09/132131729721708202.jpg"
-        alt="Card Image"
-      />
-      <ul className="text-list">
-        <li>
-          <div className="hover-container"></div>
-          <input
-            type="submit"
-            name="btnhousingDepositcalculator"
-            value="Maybe later"
-            className="myButton"
-          />
-        </li>
-        <li>
-          <div className="hover-container"></div>
-          <input
-            type="submit"
-            name="btnhousingDepositcalculator"
-            value="I am interested"
-            className="myButton"
-          />
-        </li>
-        <li>
-          <div className="hover-container"></div>
-          <input
-            type="submit"
-            name="btnhousingDepositcalculator"
-            value="I need help"
-            className="myButton"
-            onClick={() =>
-              navigateToPage(
-                'index.html?country=1&branch=4&bench=1&type=1&product=3'
-              )
-            }
-          />
-        </li>
-        <li>
-          <div className="hover-container"></div>
-          <input
-            type="submit"
-            name="btnhousingDepositcalculator"
-            value="Loan Calculator"
-            className="myButton"
-            onClick={() =>
-              navigateToPage(
-                'index.html?country=1&branch=4&bench=1&type=1&product=3'
-              )
-            }
-          />
-        </li>
-        {/* Add more list items as needed */}
-      </ul>
+    <div className='pageContainer'>
+      <LeafletCard />
+      
+
+      <PinchZoomComponent />
+      
     </div>
-  );
+  )
 }
 
-export default Leaflet_1;
+export default Leaflet1
