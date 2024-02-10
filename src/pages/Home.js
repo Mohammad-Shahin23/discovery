@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Card from '../components/Card';
 import Carousel from '../components/Carousel';
@@ -14,11 +14,34 @@ function Home() {
   const type = params.get('type') || 'defaultType';
   const product = params.get('product') || 'defaultProduct';
   const lang = params.get('lang') || 'en';
+  const initialSubProduct = params.get('subProduct') || '';
+
+  const [selectedSubProduct, setSelectedSubProduct] = useState(initialSubProduct);
+
+  const handleSubProductHover = (subProduct) => {
+    setSelectedSubProduct(subProduct);
+  };
 
   return (
     <div className="app-container">
-      <Card country={country} branch={branch} bench={bench} type={type} product={product} lang={lang} />
-      <Carousel />
+      <Card
+        country={country}
+        branch={branch}
+        bench={bench}
+        type={type}
+        product={product}
+        lang={lang}
+        onSubProductClick={handleSubProductHover}
+      />
+      <Carousel
+        selectedSubProduct={selectedSubProduct}
+        country={country}
+        branch={branch}
+        bench={bench}
+        type={type}
+        product={product}
+        lang={lang}
+      />
     </div>
   );
 }

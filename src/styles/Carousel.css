@@ -8,6 +8,7 @@
     overflow: visible;
     z-index: 1;
     margin-bottom: 50px; /* Add margin to make space for the arrows */
+    
     }
     
     .swiper-slide {
@@ -80,7 +81,7 @@
     left: 15rem; /* Adjust as needed */
     }
     
-    .slider-title {
+    #slider-title {
     font-size: 30px; /* Adjust font size as needed */
     color: #fff; /* Adjust color as needed */
     }
@@ -104,3 +105,6 @@
     }
 
 
+    .swiper-3d {
+      perspective: 750px;
+  }

@@ -1,0 +1,10 @@
+.bodyContactContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    color: white;
+    font-family: 'Myriad Pro', sans-serif;
+
+   
+}

@@ -1,0 +1,151 @@
+/* ContactCard.css */
+
+/* Style for the entire contact card */
+.contact-card {
+  display: flex;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+ 
+  width: 60rem;
+  height: 30rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: #027dd5;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start:0;
+  margin-block-end:0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+  /* Style for the header */
+  .contact-card h3 {
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  
+  /* Style for the input fields and labels */
+  .contact-card label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .contact-card input {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 #ffecec;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-card .mobile-inputs {
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+    scale: 1.4;
+    padding: 10% 0% 0% 0%;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+  
+.contact-card .mobile-inputs input:first-child {
+  width: 75px;
+  margin-right: 10px;
+}
+  .Inputs{
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  .input3{
+    width: 500px;
+  }
+  
+
+  .input2{
+    width: 100%;
+  }
+  
+
+  .Contct_title {
+    width: 100%;
+    background-color: #02029173;
+    padding: 10px 0;
+    border-radius: 15px 15px 0 0;
+}
+
+.button-row{
+  display: flex;
+}
+
+#Submit{
+  margin-right: 20px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  box-shadow: black 0px 0px 1px;
+  border-radius: 5px;
+  background-color: #01c01a;
+  color: white; 
+
+}
+#Submit:hover{
+  background-color: #0fb100;
+  color: white;
+  
+}
+
+#Close{
+  margin-right: 20px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  box-shadow: black 0px 0px 1px;
+  border-radius: 5px;
+  background-color: #c70505;
+  color: white; 
+  
+}
+
+#Close:hover{
+  background-color: #aa0101;
+  color: white;
+  
+}
+
+.input3.invalid {
+  border: 2px solid #c70505;
+}
+
+.input3:focus {
+  outline: none;
+}
+
+.input2.invalid {
+  border: 2px solid #c70505;
+  outline: none;
+}
+
+.input2:focus {
+  outline: none;
+}
+
+
+  .validation-message {
+    color: #c70505;
+    font-size: 10px;
+    margin-bottom: 4px;
+    margin-left: 10px;
+}
+
+.input1 {
+  background-color: rgb(255, 255, 255);
+}

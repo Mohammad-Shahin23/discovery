@@ -8,7 +8,7 @@
   margin: 0;
 } */
 
-.leafletCard {
+#leafletCard {
   
   max-width: 500px;
   max-height: 600px;
@@ -50,7 +50,7 @@
   display: block;
 }
 
-#emptyCard img {
+#leafletCard img {
   width: 100%;
   height: auto;
   border-radius: 15px;

@@ -8,14 +8,13 @@
   background-color: rgba(255, 255, 255, 0.5);
   display: none;
   pointer-events: none;
-  }
+}
   
-  .text-list li:hover .hover-container {
+.text-list li:hover .hover-container {
   display: block;
-  }
+}
 
-
-.card {
+#emptyCard {
   
   width: 450px;
   height: 600px;
@@ -23,7 +22,7 @@
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  color: #000;
+  color: #ffffff;
   
 }
 
@@ -41,12 +40,13 @@
   list-style-type: none;
   padding: 0;
   color: #fff;  
-  font-family: 'Myriad Pro';
+  font-family: 'Myriad Pro', sans-serif;
 }
 
 .text-list li {
   margin-bottom: 10px;
   position: relative;
+  font-family: 'Myriad Pro', sans-serif;
 }
 
 .text-list li::before {

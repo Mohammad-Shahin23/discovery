@@ -3,13 +3,17 @@ import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import '../styles/leaflet/PinchZoomComponent.css';
 
-function PinchZoomComponent() {
+function PinchZoomComponent({ country, branch, bench, type, product, subProduct ,lang }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleBrochure = () => {
     setIsOpen(!isOpen);
   };
     
+
+  const goBack = () => {
+    window.history.back();
+  };
     
 
    
@@ -19,10 +23,11 @@ function PinchZoomComponent() {
   <div className="page pinch-zoom-parent">
      <div className={`leafletCard-Container ${isOpen ? 'open' : ''}`} onClick={toggleBrochure}>
       <div className="leaflet-titel">
-      <p>Loan</p>
+      <p>{`${subProduct}`}</p>
+      <button  onClick={goBack} id="back-button"></button>
       </div>
       
-      <div className={`container ${isOpen ? 'open' : ''}`} id="one">
+      <div className={`Tricontainer ${isOpen ? 'open' : ''}`} id="one">
           
           <div className="left-side">
             <div className="front">
