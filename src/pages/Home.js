@@ -18,7 +18,7 @@ function Home() {
 
   const [selectedSubProduct, setSelectedSubProduct] = useState(initialSubProduct);
 
-  const handleSubProductHover = (subProduct) => {
+  const handleSubProductClick = (subProduct) => {
     setSelectedSubProduct(subProduct);
   };
 
@@ -31,7 +31,7 @@ function Home() {
         type={type}
         product={product}
         lang={lang}
-        onSubProductClick={handleSubProductHover}
+        onSubProductClick={handleSubProductClick}
       />
       <Carousel
         selectedSubProduct={selectedSubProduct}

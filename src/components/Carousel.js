@@ -14,11 +14,12 @@ const Carousel = ({ country, branch, bench, type, product, lang, selectedSubProd
   const [subProducts, setSubProducts] = useState([]);
   const [data, setData] = useState(null); // Add this line to declare 'data' state
   const [swiperKey, setSwiperKey] = useState(Date.now());
+  const [countryName, setCountryName] = useState('');
 
   useEffect(() => {
     const fetchImageUrlsAndSubProducts = async () => {
       try {
-        const apiEndpoint = `https://arabbank.azurewebsites.net/api/Api/GetDiscoveryContent?country=${country}&branch=${branch}&bench=${bench}&type=${type}&product=${product}&lang=${lang}`;
+        const apiEndpoint = `https://arabbanktest.azurewebsites.net/api/Api/GetDiscoveryContent?country=${country}&branch=${branch}&bench=${bench}&type=${type}&product=${product}&lang=${lang}`;
         const response = await fetch(apiEndpoint);
 
         if (!response.ok) {
@@ -37,6 +38,7 @@ const Carousel = ({ country, branch, bench, type, product, lang, selectedSubProd
         setImageUrls(urls);
         setSubProducts(subProducts || []);
         setSwiperKey(Date.now());
+        setCountryName(responseData.result.country);
       } catch (error) {
         console.error('Error fetching image URLs and SubProducts:', error);
         setImageUrls([]);
@@ -48,13 +50,13 @@ const Carousel = ({ country, branch, bench, type, product, lang, selectedSubProd
   }, [country, branch, bench, type, product, lang]);
 
   useEffect(() => {
-    const activeIndex = subProducts.findIndex((subProduct) => subProduct === selectedSubProduct);
-
+    let activeIndex = subProducts.findIndex((subProduct) => subProduct === selectedSubProduct);
+    activeIndex = (activeIndex + 2) % subProducts.length;
+  
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideTo(activeIndex);
     }
   }, [selectedSubProduct, subProducts]);
-
   const handleImageClick = (index) => {
     const selectedSubProduct = subProducts[index];
     const selectedSubProductParam = encodeURIComponent(selectedSubProduct);
@@ -64,7 +66,7 @@ const Carousel = ({ country, branch, bench, type, product, lang, selectedSubProd
     const branchCode = data?.result.branchName?.result[0]?.branchNumber || '';
     const productName = data?.result.product || '';
 
-    navigate(`/leaflet1?imageIndex=${index + 1}&country=${country}&branch=${branch}&branchName=${branchName}&branchCode=${branchCode}&bench=${bench}&type=${type}&product=${product}&productName=${productName}&subProduct=${selectedSubProductParam}&lang=${lang}`);
+    navigate(`/leaflet1?&country=${country}&countryName=${countryName}&branch=${branch}&branchName=${branchName}&branchCode=${branchCode}&bench=${bench}&type=${type}&product=${product}&productName=${productName}&subProduct=${selectedSubProductParam}&lang=${lang}`);
 };
 
   return (
@@ -77,6 +79,7 @@ const Carousel = ({ country, branch, bench, type, product, lang, selectedSubProd
         centeredSlides={true}
         loop={true}
         slidesPerView={3}
+      
         spaceBetween={0}
         coverflowEffect={{
           rotate: 0,

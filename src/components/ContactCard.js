@@ -65,7 +65,7 @@ const ContactCard = () => {
       try {
         console.log('countryNameFromUrl:', countryNameFromUrl);
 
-        const contentDetailsResponse = await fetch('https://arabbank.azurewebsites.net/api/SendEmailForTicket', {
+        const contentDetailsResponse = await fetch('https://arabbanktest.azurewebsites.net/api/SendEmailForTicket', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

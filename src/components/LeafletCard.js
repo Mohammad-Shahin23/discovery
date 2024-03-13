@@ -11,7 +11,7 @@ function LeafletCard({ country, branch, branchName, branchCode,  bench, type, pr
   useEffect(() => {
     const fetchSubProductData = async () => {
       try {
-        const apiEndpoint = `https://arabbank.azurewebsites.net/api/Api/GetDiscoveryContentDetails?country=${country}&subproduct=Fixed%20Deposit%20Foreign%20Currencies&lang=${lang}`;
+        const apiEndpoint = `https://arabbanktest.azurewebsites.net/api/Api/GetDiscoveryContentDetails?country=${country}&subproduct=Fixed%20Deposit%20Foreign%20Currencies&lang=${lang}`;
         const response = await fetch(apiEndpoint);
 
         if (!response.ok) {
@@ -21,7 +21,7 @@ function LeafletCard({ country, branch, branchName, branchCode,  bench, type, pr
         const data = await response.json();
         setSubProductData(data.result.subProduct[0]);
         setCountryName(data.result.country);
-        countryName = data.result.country;
+        
       } catch (error) {
         console.error('Error fetching subproduct data:', error);
       }

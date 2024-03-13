@@ -1,0 +1,146 @@
+.feedback-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0); /* Transparent white background */
+  border: solid 1px #fff; /* White border */
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 70%;
+  
+}
+
+
+.feedback-form{
+  display: flex;
+  margin-top: 20px;
+  width: 50rem ;
+  flex-direction: column;
+
+}
+
+.feedback-type label,
+.feedback-rating label {
+  margin-right: 80px;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="tel"],
+.feedback-form textarea {
+  
+  padding: 10px;
+  /* margin-top: 5px;
+  margin-bottom: 10px; */
+  border: none;
+  border-radius: 5px;
+}
+
+.feedback-form textarea {
+  height: 100px;
+  margin-left: 0;
+}
+
+
+.feedback-submit button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.feedback-submit button[type="submit"] {
+  background-color: #00ff00;
+}
+
+.feedback-submit button[type="button"] {
+  background-color: #ff0000;
+}
+
+
+
+
+
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+
+
+/* You might need to adjust the width of inputs if they're too short or long */
+input[type="text"], input[type="tel"], textarea {
+  flex-grow: 1;
+  margin-left: 10px; /* This creates space between the label and the input */
+}
+
+.mobile-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+}
+
+/* .mobile-group label {
+  margin-right: 125px;
+} */
+
+#mobilePrefix {
+  width: 75px;
+  position: relative;
+  left: 75px;
+}
+
+#mobileNumber {
+  flex-grow: 1;
+  width: 484px;
+  position: relative;
+  left: 73px;
+}
+
+.mobile-group input[type="tel"] {
+  flex-grow: 1;
+  width: auto; /* Let the input grow to fill the remaining space */
+}
+
+/* label {
+ margin-right:75px ;
+} */
+
+.feedback-type {
+  display: flex;
+ 
+}
+
+.feedback-type-radio {
+  width: 29rem;
+}
+
+.form-group.textArea label {
+  margin-right: 121px 
+}
+
+.form-group.name label {
+  margin-right: 140px;
+}
+
+.feedback-submit {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  position: relative;
+  left: 140px;
+}
+
+.feedback-rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

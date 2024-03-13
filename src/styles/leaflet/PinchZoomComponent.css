@@ -53,7 +53,7 @@
   margin-left: 10%;
   display: flex;
   width: 82%;
-  height: 87%;
+  height: 88%;
   perspective: 1000px;
   font-family: var(--font-1);
 }
@@ -86,7 +86,7 @@
   }
   
   .front,
-  .back {
+  .mainPage {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -100,7 +100,7 @@
     color: rgb(255, 0, 0);
   }
   
-  .back {
+  .mainPage {
     color: white;
     background: white;
     transform: rotateY(180deg);
@@ -116,8 +116,8 @@
     transform: rotateY(-180deg);
   }
   
-  .right-side .back {
-    background-color: #000000;
+  .right-side .mainPage {
+    background-color: #ffffff;
     overflow: hidden;
   }
   
@@ -131,7 +131,7 @@
     clip-path: polygon(0 0, 100% 0%, 100% 60%, 30% 90%, 0 50%);
   }
   
-  .right-side .back .bottom {
+  .right-side .mainPage .bottom {
     height: 100%;
     width: 100%;
     background: white;
@@ -145,44 +145,44 @@
     font-weight: 900;
   }
   
-  .right-side .back .text {
+  .right-side .mainPage .text {
     color: var(--grey-1);
     font-size: 25px;
   }
   
-  .right-side .back .highlight {
+  .right-side .mainPage .highlight {
     color: var(--color-1);
     font-size: 30px;
     font-style: italic;
   }
   
-  .right-side .back .text:nth-child(3) {
+  .right-side .mainPage .text:nth-child(3) {
     width: 25%;
     padding-bottom: 4px;
     border-bottom: 5px solid var(--color-1);
   }
   
-  .right-side .back .blurb {
+  .right-side .mainPage .blurb {
     color: var(--grey-1);
     font-weight: 100;
     font-size: 13px;
     padding: 8px 0px;
   }
   
-  .left-side .back .content {
+  .left-side .mainPage .content {
     background: white;
     height: 100%;
     width: 100%;
     overflow: hidden;
   }
   
-  .left-side .back .left-image {
+  .left-side .mainPage .left-image {
     width: 100%;
     height: auto;
     clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 50%);
   }
   
-  .left-side .back .stuff {
+  .left-side .mainPage .stuff {
     height: 48%;
     width: 70%;
     border: 15px solid orange;
@@ -194,19 +194,19 @@
     padding-top: 75%;
   }
   
-  .left-side .back .stuff div:nth-child(1) {
+  .left-side .mainPage .stuff div:nth-child(1) {
     font-size: 22px;
     color: var(--grey-1);
   }
   
-  .left-side .back .stuff div:nth-child(2) {
+  .left-side .mainPage .stuff div:nth-child(2) {
     font-size: 25px;
     color: var(--color-1);
     font-weight: 900;
     border-bottom: 5px solid var(--grey-1);
   }
   
-  .left-side .back .stuff p {
+  .left-side .mainPage .stuff p {
     margin-top: 10%;
     color: var(--grey-1);
     font-size: 14px;
@@ -341,7 +341,7 @@
   }
   
   .front .content,
-  .back .content {
+  .mainPage .content {
     background-color: transparent;
   }
   

@@ -11,6 +11,7 @@ function Leaflet1() {
   // Retrieve parameters from the URL
   const imageIndex = queryParams.get('imageIndex');
   const country = queryParams.get('country');
+  const countryName = queryParams.get('countryName');
   const branch = queryParams.get('branch');
   const branchName = queryParams.get('branchName');
   const branchCode = queryParams.get('branchCode'); 
@@ -21,7 +22,9 @@ function Leaflet1() {
   const subProduct = queryParams.get('subProduct');
   
   const lang = queryParams.get('lang');
-  console.log('productName', productName);
+  // console.log('productName', productName);
+  // console.log('subProduct', subProduct);
+  // console.log('countryName', countryName);
 
 
 
@@ -45,10 +48,12 @@ function Leaflet1() {
 
       <PinchZoomComponent 
           country={country}
+          countryName={countryName}
           branch={branch}
           bench={bench}
           type={type}
           product={product}
+          productName={productName}
           subProduct={subProduct}
           lang={lang}
       />
