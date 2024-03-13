@@ -137,12 +137,13 @@ function FeedbackForm() {
                         <label htmlFor="mobilePrefix">Mobile Number</label>
                         <div className="prefix">
                         <input
-                                type="tel"
-                                id="mobilePrefix"
-                                name="mobilePrefix"
-                                placeholder={feedback.mobilePrefix}
-                                onChange={handleChange}
-                            />
+                            type="tel"
+                            id="mobilePrefix"
+                            name="mobilePrefix"
+                            value={feedback.mobilePrefix}
+                            readOnly
+                        />
+
                         </div>
                         <div className="mobile-number">
                             <input
