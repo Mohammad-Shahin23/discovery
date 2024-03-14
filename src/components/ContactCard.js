@@ -18,7 +18,7 @@ const ContactCard = () => {
     setCountryNameFromUrl(countryNameFromUrl);
     const fetchData = async () => {
       try {
-        const response = await fetch('https://arabbank.azurewebsites.net/api/Country/getCountryCode', {
+        const response = await fetch('https://arabbanktest.azurewebsites.net/api/Country/FetchCountryCode', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

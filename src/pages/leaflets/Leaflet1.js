@@ -26,12 +26,16 @@ function Leaflet1() {
   // console.log('subProduct', subProduct);
   // console.log('countryName', countryName);
 
-
+  const bodyStyles = {
+    height: '100%',
+    margin: 0,
+    overflow: 'hidden',
+    padding: '100px 0 0 100px',
+    fontFamily: 'Myriad Pro, sans-serif',
+  };
 
   return (
-
-    
-    <div className='pageContainer'>
+    <div className='pageContainer' style={bodyStyles}>
       <LeafletCard
           country={country}
           branch={branch}
@@ -44,8 +48,6 @@ function Leaflet1() {
           subProduct={subProduct}
           lang={lang}
         />
-      
-
       <PinchZoomComponent 
           country={country}
           countryName={countryName}
@@ -57,11 +59,8 @@ function Leaflet1() {
           subProduct={subProduct}
           lang={lang}
       />
-      
-      
-
     </div>
   )
 }
 
-export default Leaflet1
+export default Leaflet1;

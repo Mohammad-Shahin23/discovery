@@ -2,7 +2,6 @@ body, html {
   height: 100%;
   margin: 0;
   overflow: hidden; /* Prevent vertical scrollbar */
-  padding: 50px 0 0 0;
   font-family: 'Myriad Pro', sans-serif;
 }
 

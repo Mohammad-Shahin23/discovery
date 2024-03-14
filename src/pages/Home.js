@@ -22,8 +22,16 @@ function Home() {
     setSelectedSubProduct(subProduct);
   };
 
+  const bodyStyles = {
+    height: '100%',
+    margin: 0,
+    overflow: 'hidden',
+    padding: '100px 0 0 0',
+    fontFamily: 'Myriad Pro, sans-serif',
+  };
+
   return (
-    <div className="app-container">
+    <div className="app-container" style={bodyStyles}>
       <Card
         country={country}
         branch={branch}

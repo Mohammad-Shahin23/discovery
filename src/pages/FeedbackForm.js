@@ -16,10 +16,11 @@ function FeedbackForm() {
     branchName: '',
     countryName: '',
     name: '',
-    mobilePrefix: null,
-    mobileNumber: null,
+    mobilePrefix: '',
+    mobileNumber: '',
+    mobileNumberValue: '',
     message: '',
-    rating: 5,
+    rating: 1,
     
   });
 
@@ -78,8 +79,8 @@ function FeedbackForm() {
       browsingLanguage: lang,
       customerName: feedback.name,
       mobileCountryCode: feedback.mobilePrefix,
-      mobile: feedback.mobileNumber,
-      feedbackContent: feedback.feedbackType,
+      mobile: feedback.mobileNumberValue,
+      feedbackContent: feedback.message,
     };
 
     try {
@@ -101,10 +102,9 @@ function FeedbackForm() {
       setFeedback({
         ...feedback,
         name: '',
-        mobilePrefix: null,
-        mobileNumber: null,
         message: '',
-        rating: 5,
+        mobileNumberValue: '',
+        rating: 1,
       });
 
     } catch (error) {
@@ -149,8 +149,10 @@ function FeedbackForm() {
                             <input
                                 type="tel"
                                 id="mobileNumber"
-                                name="mobileNumber"
+                                name="mobileNumberValue"
                                 placeholder={feedback.mobileNumber}
+                                value={feedback.mobileNumberValue}
+                                
                                 onChange={handleChange}
                             />
                         </div>
@@ -172,7 +174,15 @@ function FeedbackForm() {
                 </div>
                 <div className="feedback-submit">
                     <button type="submit">Submit</button>
-                    <button type="button" onClick={() => setFeedback({ ...feedback, message: '' })}>Clear</button>
+                    <button type="button" onClick={() => setFeedback({
+                      ...feedback,
+                      feedbackType: 'compliment',
+                      name: '',
+                      mobileNumberValue: '',
+                      message: '',
+                      rating: 1,
+                    })}>Clear</button>
+
                 </div>
             </form>
         </div>
