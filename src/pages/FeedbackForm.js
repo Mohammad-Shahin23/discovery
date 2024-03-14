@@ -24,6 +24,12 @@ function FeedbackForm() {
     
   });
 
+  const [layout, setLayout] = useState({
+    direction: lang === 'ar' ? 'rtl' : 'ltr',
+    language: lang,
+  });
+
+
   useEffect(() => {
     async function fetchCountryData() {
       try {
@@ -51,6 +57,13 @@ function FeedbackForm() {
   }, []);
   
 
+  useEffect(() => {
+    setLayout({
+      direction: lang === 'ar' ? 'rtl' : 'ltr',
+      language: lang,
+    });
+  }, [lang]);
+
   const smileRating = [
     <FrownOutlined />,
     <FrownOutlined />,
@@ -58,6 +71,41 @@ function FeedbackForm() {
     <SmileOutlined />,
     <SmileOutlined />,
   ];
+
+
+  const getTranslation = (key) => {
+    const translations = {
+      'en': {
+        'feedback': 'Feedback',
+        'feedbackType' : 'Feedback Type',
+        'complaint' : 'Complaint',
+        'suggestion&feedback': 'Suggestion & Feedback',
+        'experienceRating': 'Experience Rating',
+        'name': 'Name',
+        'mobileNumber': 'Mobile Number',
+        'submit': 'Submit',
+        'clear': 'Clear',
+        // ... Add more translations for English
+      },
+      'ar': {
+        'feedback': 'ملاحظات',
+        'feedbackType' : 'نوع الملاحظات',
+        'complaint' : 'شكوى',
+        'suggestion&feedback': 'الاقتراح والملاحظات',
+        'experienceRating': 'ما هو تقيمك لخدمتنا',
+        
+
+        'name': 'الاسم',
+        'mobileNumber': 'رقم الهلتف الخلوي',
+        'submit': 'إرسال',
+        'clear': 'مسح',
+        // ... Add more translations for Arabic
+      }
+    };
+    return translations[layout.language][key];
+  };
+
+
 
   // Handle input changes
   const handleChange = (e) => {
@@ -112,29 +160,29 @@ function FeedbackForm() {
     }
   };
     return (
-        <div className="feedback-container">
+        <div className="feedback-container" dir={layout.direction}>
             <form onSubmit={handleSubmit}>
                 <div className="feedback-header">
-                    <h2>Feedback</h2>
+                    <h2>{getTranslation('feedback')}</h2>
                 </div>
                 <div className="feedback-type">
-                    <label>Feedback Type</label>
+                    <label>{getTranslation('feedbackType')}</label>
                     <div className="feedback-type-radio">
-                        <input type="radio" id="compliment" name="feedbackType" value="compliment" checked={feedback.feedbackType === 'compliment'} onChange={handleChange} />
-                        <label htmlFor="compliment">compliment</label>
+                        <input type="radio" id="complaint" name="feedbackType" value="complaint" checked={feedback.feedbackType === 'complaint'} onChange={handleChange} />
+                        <label htmlFor="complaint">{getTranslation('complaint')}</label>
                         <input type="radio" id="suggestion" name="feedbackType" value="FeedBack"  onChange={handleChange} />
-                        <label htmlFor="suggestion">Suggestion & Feedback</label>
+                        <label htmlFor="suggestion">{getTranslation('suggestion&feedback')}</label>
                         <input type="radio" id="experienceRating" name="feedbackType" value="Rating" onChange={handleChange} />
-                        <label htmlFor="experienceRating">Experience Rating</label>
+                        <label htmlFor="experienceRating">{getTranslation('experienceRating')}</label>
                     </div>
                 </div>
                 <div className="feedback-form">
                     <div className="form-group name">
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Name" value={feedback.name} onChange={handleChange} />
+                        <label htmlFor="name">{getTranslation('name')}</label>
+                        <input type="text" id="name" name="name" placeholder={getTranslation('name')} value={feedback.name} onChange={handleChange} />
                     </div>
                     <div className="form-group mobile-group">
-                        <label htmlFor="mobilePrefix">Mobile Number</label>
+                        <label htmlFor="mobilePrefix">{getTranslation('mobileNumber')}</label>
                         <div className="prefix">
                         <input
                             type="tel"
@@ -158,12 +206,12 @@ function FeedbackForm() {
                         </div>
                     </div>
                     <div className="form-group textArea">
-                        <label htmlFor="message">Feedback</label>
-                        <textarea id="message" name="message" placeholder="Feedback" value={feedback.message} onChange={handleChange} />
+                        <label htmlFor="message">{getTranslation('feedback')}</label>
+                        <textarea id="message" name="message" placeholder={getTranslation('feedback')} value={feedback.message} onChange={handleChange} />
                     </div>
                 </div>
                 <div className="feedback-rating">
-                    <label>Experience Rating</label>
+                    <label>{getTranslation('experienceRating')}</label>
                     <Rate 
                     defaultValue={0}
                     count={5}
@@ -173,7 +221,7 @@ function FeedbackForm() {
                     {/* Define other rating inputs similar to the above */}
                 </div>
                 <div className="feedback-submit">
-                    <button type="submit">Submit</button>
+                    <button type="submit">{getTranslation('submit')}</button>
                     <button type="button" onClick={() => setFeedback({
                       ...feedback,
                       feedbackType: 'compliment',
@@ -181,7 +229,7 @@ function FeedbackForm() {
                       mobileNumberValue: '',
                       message: '',
                       rating: 1,
-                    })}>Clear</button>
+                    })}>{getTranslation('clear')}</button>
 
                 </div>
             </form>

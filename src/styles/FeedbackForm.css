@@ -39,7 +39,7 @@ form {
   /* margin-top: 5px;
   margin-bottom: 10px; */
   border: none;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .feedback-form textarea {
@@ -58,10 +58,12 @@ form {
 
 .feedback-submit button[type="submit"] {
   background-color: #00ff00;
+  width: 125px;
 }
 
 .feedback-submit button[type="button"] {
   background-color: #ff0000;
+  width: 125px;
 }
 
 
@@ -122,7 +124,7 @@ input[type="text"], input[type="tel"], textarea {
 }
 
 .feedback-type-radio {
-  width: 28rem;
+  width: 27rem;
 }
 
 .form-group.textArea label {
@@ -138,11 +140,166 @@ input[type="text"], input[type="tel"], textarea {
   margin-top: 20px;
   flex-direction: row;
   position: relative;
-  left: 140px;
+  left: 185px;
 }
 
 .feedback-rating {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+
+[dir='rtl'] .feedback-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+[dir='rtl'] form {
+  background-color: rgba(255, 255, 255, 0); /* Transparent white background */
+  border: solid 1px #fff; /* White border */
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 70%;
+}
+
+[dir='rtl'] .feedback-form {
+  display: flex;
+  margin-top: 20px;
+  width: 50rem;
+  flex-direction: column;
+}
+
+[dir='rtl'] .feedback-type label,
+[dir='rtl'] .feedback-rating label {
+  margin-left: 80px;
+  margin-right: 0; /* Switch the margin to the left for RTL */
+  font-size: 17px;
+}
+
+[dir='rtl'] .feedback-form input[type="text"],
+[dir='rtl'] .feedback-form input[type="tel"],
+[dir='rtl'] .feedback-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  
+}
+
+[dir='rtl'] .feedback-form textarea {
+  height: 100px;
+  margin-right: 5px; /* Switch the margin to the right for RTL */
+}
+
+[dir='rtl'] .feedback-submit button {
+  padding: 10px 20px;
+  margin-left: 10px; /* Switch the margin to the left for RTL */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 125px;
+}
+
+[dir='rtl'] .feedback-submit button[type="submit"] {
+  background-color: #00ff00;
+}
+
+[dir='rtl'] .feedback-submit button[type="button"] {
+  background-color: #ff0000;
+}
+
+[dir='rtl'] .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+[dir='rtl'] input[type="text"],
+[dir='rtl'] input[type="tel"],
+[dir='rtl'] textarea {
+  flex-grow: 1;
+  margin-right: 10px; /* Adjust margins for RTL */
+}
+
+[dir='rtl'] .mobile-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Flip alignment for RTL */
+  width: 46rem;
+}
+
+[dir='rtl'] #mobilePrefix {
+  width: 75px;
+  position: relative;
+  right: 69px;
+}
+
+[dir='rtl'] #mobileNumber {
+  flex-grow: 1;
+  width: 525px;
+  position: relative;
+  right: 65px;
+}
+
+
+[dir='rtl'] .mobile-group input[type="tel"] {
+  flex-grow: 1;
+  width: auto;
+}
+
+[dir='rtl'] .feedback-type {
+  display: flex;
+  width: 30rem;
+}
+
+[dir='rtl'] .feedback-type-radio {
+  width: 27rem;
+}
+
+[dir='rtl'] .form-group.textArea label {
+  margin-left: 121px; /* Adjust for RTL */
+  margin-right: 0;
+}
+
+[dir='rtl'] .form-group.name label {
+  margin-left: 140px; /* Adjust for RTL */
+  margin-right: 0;
+}
+
+[dir='rtl'] .feedback-submit {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  position: relative;
+  right: 140px; /* Use 'right' for RTL */
+}
+
+[dir='rtl'] .feedback-rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+[dir='rtl'] .form-group.textArea {
+  width: 791px;
+}
+
+[dir='rtl'] input::placeholder,
+
+[dir='rtl'] textarea::placeholder {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir='rtl'] #mobileNumber {
+  text-align: right;
+}
+
+[dir='rtl'] input[type="tel"] {
+  text-align: right;
 }
